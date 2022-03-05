@@ -1,0 +1,1 @@
+UPDATE "TagValue" SET "TimeStamp" = now(), "Value" = ROUND((random() * 100)::numeric, 2) WHERE 1 = 1;
