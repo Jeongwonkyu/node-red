@@ -25,6 +25,10 @@ module.exports = function (RED) {
 
     node.on('input', function (msg) {
       // msg.payload = msg.payload.toLowerCase();
+<<<<<<< Updated upstream
+=======
+      // node.send(msg);
+>>>>>>> Stashed changes
       node.send(msg);
     });
   }
