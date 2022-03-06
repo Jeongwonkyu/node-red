@@ -1,15 +1,77 @@
 <script type="text/javascript">
   RED.nodes.registerType("lower-case", {
-    category: "function",
+    category: "Signal",
     color: "#a6bbcf",
     defaults: {
+      prefix: { value: "" },
       name: { value: "" },
+      // buttonState: { value: true },
     },
     inputs: 1,
     outputs: 1,
-    icon: "file.png",
+    icon: "bridge.svg",
     label: function () {
       return this.name || "lower-case";
+    },
+    labelStyle: function () {
+      return this.name ? "node_label_italic" : "";
+    },
+    align: "left",
+    inputLabels: "parameter for input",
+    outputLabels: ["stdout", "stderr", "rc"],
+    button: {
+      // toggle: "buttonState",
+      enabled: function () {
+        return !this.changed;
+      },
+      visible: function () {
+        return this.hasButton;
+      },
+      onclick: function () {},
+    },
+    oneditprepare: function () {
+      $(".my-button-group").on("click", function () {
+        $(".my-button-group").removeClass("selected");
+        $(this).addClass("selected");
+      });
+
+      $("#node-input-example2").typedInput({
+        type: "json",
+        types: ["json"],
+      });
+
+      $("#node-input-example3").typedInput({
+        type: "msg",
+        types: ["msg", "flow", "global"],
+        typeField: "#node-input-example3-type",
+      });
+
+      $("#node-input-example4").typedInput({
+        types: [
+          {
+            value: "fruit",
+            options: [
+              { value: "apple", label: "Apple" },
+              { value: "banana", label: "Banana" },
+              { value: "cherry", label: "Cherry" },
+            ],
+          },
+        ],
+      });
+
+      $("#node-input-example5").typedInput({
+        types: [
+          {
+            value: "fruit",
+            multiple: "true",
+            options: [
+              { value: "apple", label: "Apple" },
+              { value: "banana", label: "Banana" },
+              { value: "cherry", label: "Cherry" },
+            ],
+          },
+        ],
+      });
     },
   });
 </script>
@@ -18,6 +80,49 @@
   <div class="form-row">
     <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name" />
+  </div>
+  <div class="form-row">
+    <button type="button" class="red-ui-button">Button</button>
+  </div>
+  <div class="form-row">
+    <button type="button" class="red-ui-button red-ui-button-small">
+      Button
+    </button>
+  </div>
+  <div class="form-row">
+    <span class="button-group">
+      <button
+        type="button"
+        class="red-ui-button toggle selected my-button-group"
+      >
+        b1</button
+      ><button type="button" class="red-ui-button toggle my-button-group">
+        b2</button
+      ><button type="button" class="red-ui-button toggle my-button-group">
+        b3
+      </button>
+    </span>
+  </div>
+  <div class="form-row">
+    <input type="text" id="node-input-example1" />
+    <input type="hidden" id="node-input-example1-type" />
+  </div>
+
+  <div class="form-row">
+    <input type="text" id="node-input-example2" />
+  </div>
+
+  <div class="form-row">
+    <input type="text" id="node-input-example3" />
+    <input type="hidden" id="node-input-example3-type" />
+  </div>
+
+  <div class="form-row">
+    <input type="text" id="node-input-example4" />
+  </div>
+
+  <div class="form-row">
+    <input type="text" id="node-input-example5" />
   </div>
 </script>
 

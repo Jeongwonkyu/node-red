@@ -1,5 +1,5 @@
 {
-  "name": "node-red-contrib-example-lower-case",
+  "name": "@rosbud/lower-case",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,9 @@
   },
   "author": "",
   "license": "MIT",
-  "keywords": [ "node-red" ],
+  "keywords": [
+    "node-red"
+  ],
   "node-red": {
     "nodes": {
       "lower-case": "lower-case.js"

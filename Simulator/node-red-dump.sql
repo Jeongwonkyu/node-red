@@ -90,11 +90,11 @@ ALTER TABLE public."TagValue" OWNER TO postgres;
 --
 
 COPY public."TagMaster" ("AssetId", "TagName", "Description", "SigType", "EuLo", "EuHi", "EuUnit", "LimitLoLo", "LimitLo", "LimitHi", "LimitHiHi", "Used", "SymbolName", "SymbolUnit", "SymbolSection", "SymbolDesc", "IsAlarm", "ScaleLo", "ScaleHi") FROM stdin;
-KR	TagD	해수온도	PI	0	100	°C	0	0	0	0	1		°C			0	0	0
-KR	TagC	강우량	PI	0	100	mm	0	0	0	0	1		mm			0	0	0
-KR	TagB	습도	PI	0	100	%	0	0	0	0	1		%			0	0	0
-KR	TagA	대기온도	PI	0	100	°C	0	0	0	0	1		°C			0	0	0
-KR-S1	TagE	Core Exit Temp 23 - Core 089 A	PI	0	100		0	0	0	0	1	CET23_C089A				0	0	0
+KR	TagA	Sample Tag A	AI	0	100	°C	0	0	0	0	1		°C			0	0	0
+KR	TagB	Sample Tag B	AI	0	100	%	0	0	0	0	1		%			0	0	0
+KR	TagD	Sample Tag D	AI	0	100	°C	0	0	0	0	1		°C			0	0	0
+KR	TagC	Sample Tag C	AI	0	100	mm	0	0	0	0	1		mm			0	0	0
+KR-S1	TagE	Sample Tag E	AI	0	100	%	0	0	0	0	1	CET23_C089A	%			0	0	0
 \.
 
 
