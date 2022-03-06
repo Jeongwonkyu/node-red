@@ -17,7 +17,7 @@ module.exports = function (RED) {
     }
   }
 
-  function lowerCaseNode(config) {
+  function signalFilter(config) {
     var node = this;
     RED.nodes.createNode(node, config);
     node.topic = config.topic;
@@ -28,5 +28,5 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType("lower-case", lowerCaseNode);
+  RED.nodes.registerType("signal-filter", signalFilter);
 }

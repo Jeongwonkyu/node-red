@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  RED.nodes.registerType("lower-case", {
+  RED.nodes.registerType("signal-filter", {
     category: "Signal",
     color: "#a6bbcf",
     defaults: {
@@ -11,7 +11,7 @@
     outputs: 1,
     icon: "bridge.svg",
     label: function () {
-      return this.name || "lower-case";
+      return this.name || "signal-filter";
     },
     labelStyle: function () {
       return this.name ? "node_label_italic" : "";
@@ -76,7 +76,7 @@
   });
 </script>
 
-<script type="text/html" data-template-name="lower-case">
+<script type="text/html" data-template-name="signal-filter">
   <div class="form-row">
     <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name" />
@@ -126,9 +126,9 @@
   </div>
 </script>
 
-<script type="text/html" data-help-name="lower-case">
+<script type="text/html" data-help-name="signal-filter">
   <p>
-    A simple node that converts the message payloads into all lower-case
+    A simple node that converts the message payloads into all signal-filter
     characters
   </p>
 </script>
