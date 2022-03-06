@@ -18,18 +18,27 @@ module.exports = function (RED) {
   }
 
   function signalFilter(config) {
-    var node = this;
+    const node = this;
     RED.nodes.createNode(node, config);
-    node.filter = config.filter;
-    console.log(node.filter)
 
-    node.on('input', function (msg) {
+    // this.tag = RED.nodes.getNode(config.tag);
+
+    node.on('input', function (msg, send, done) {
+      console.log(config.tag);
       // msg.payload = msg.payload.toLowerCase();
-<<<<<<< Updated upstream
-=======
-      // node.send(msg);
->>>>>>> Stashed changes
-      node.send(msg);
+      send(msg);
+
+      if (done) {
+
+      } else if (err) {
+        if (done) {
+          // Node-RED 1.0 compatible
+          done(err);
+        } else {
+          // Node-RED 0.x compatible
+          node.error(err, msg);
+        }
+      }
     });
   }
 
