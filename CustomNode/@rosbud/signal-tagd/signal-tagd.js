@@ -40,5 +40,5 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType("signal-filter", signalFilter);
+  RED.nodes.registerType("signal-tagd", signalFilter);
 }
