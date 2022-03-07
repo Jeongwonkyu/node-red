@@ -27,6 +27,7 @@
       },
       onclick: function () {},
     },
+    // called immediately before the dialog is displayed.
     oneditprepare: function () {
       $(".my-button-group").on("click", function () {
         $(".my-button-group").removeClass("selected");
@@ -73,8 +74,14 @@
         ],
       });
     },
+    // called when the edit dialog is okayed.
     // oneditsave: function () {},
+    // called when the edit dialog is canceled.
     // oneditcancel: function () {},
+    // called when the delete button in a configuration node’s edit dialog is pressed.
+    // oneditdelete: function () {},
+    // called when the edit dialog is resized.
+    // oneditresize: function () {} 
   });
 </script>
 
