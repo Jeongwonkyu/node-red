@@ -24,7 +24,7 @@ module.exports = function (RED) {
     // this.tag = RED.nodes.getNode(config.tag);
 
     node.on('input', function (msg, send, done) {
-      console.log(config.tag);
+      console.log(config.tagname);
       // msg.payload = msg.payload.toLowerCase();
       send(msg);
 
