@@ -5,7 +5,7 @@
     defaults: {
       name: { value: "" },
       // buttonState: { value: true },
-      tag: { value: "TagA" },
+      tagname: { value: "TagA" },
     },
     inputs: 1,
     outputs: 1,
@@ -44,7 +44,7 @@
         typeField: "#node-input-example3-type",
       });
 
-      $("#node-input-tag").typedInput({
+      $("#node-input-tagname").typedInput({
         types: [
           {
             value: "fruit",
@@ -120,8 +120,8 @@
   </div>
 
   <div class="form-row">
-    <label for="node-input-tag"><i class="fa fa-bookmark"></i> Signal</label>
-    <input type="text" id="node-input-tag" />
+    <label for="node-input-tagname"><i class="fa fa-bookmark"></i> Signal</label>
+    <input type="text" id="node-input-tagname" />
   </div>
 
   <div class="form-row">
