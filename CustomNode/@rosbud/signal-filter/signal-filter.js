@@ -1,4 +1,6 @@
 module.exports = function (RED) {
+  // const request = require('request');
+
   function getField(node, kind, value) {
     switch (kind) {
       case 'flow': // Legacy
@@ -17,11 +19,21 @@ module.exports = function (RED) {
     }
   }
 
+  // $.getJSON("/tags", function (data) {
+  //   console.log(data);
+  // });
+
   function signalFilter(config) {
     const node = this;
     RED.nodes.createNode(node, config);
 
+    var globalContext = this.context().global;
+    // console.log(globalContext);
+
     node.on('input', function (msg, send, done) {
+      var tags = globalContext.get("tags");
+      // console.log(tags);
+
       // console.log(`TagName: ${config.tag}, Field: ${config.field}`);
       var data = msg.payload;
       // console.log(data);
