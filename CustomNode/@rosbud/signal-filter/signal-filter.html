@@ -46,23 +46,31 @@
       //   ],
       // });
 
-      $("#node-input-tag").on("change", function () {});
+      $("#node-input-tag").on("change", function (event, type, value) {
+        // console.log(event);
+        // console.log(type);
+        // console.log(value);
+      });
 
       $.getJSON("/tag_list", function (data) {
         var list = [{ options: [] }];
 
         $.each(data, function (i, tag) {
-          list[0].options.push({ value: tag.TagName, label: tag.TagName });
+          list[0].options.push({
+            value: tag.TagName,
+            label: tag.TagName,
+            desc: tag.Description,
+            type: tag.SigType,
+          });
         });
 
-        // list[0].options.push({ value: "AAA", label: "AAA" });
         $("#node-input-tag").typedInput({
           type: "tag",
           value: "tag",
           types: list,
         });
 
-        console.log(list);
+        // console.log(list);
       });
 
       $("#node-input-field").typedInput({
