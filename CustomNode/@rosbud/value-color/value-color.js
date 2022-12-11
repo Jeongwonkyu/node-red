@@ -1,6 +1,5 @@
 module.exports = function (RED) {
   // const request = require('request');
-  const moment = require('moment');
 
   function getField(node, kind, value) {
     switch (kind) {
@@ -58,9 +57,7 @@ module.exports = function (RED) {
         // console.log(findValue);
 
         findTag.TIMESTAMP = findValue.TIMESTAMP;
-        // console.log(findValue.DATETIME);
-        findTag.DATETIME = moment(findValue.TIMESTAMP.SEC * 1000 + findValue.TIMESTAMP.USEC).format('YYYY-MM-DD HH:mm:ss.SSS');
-        // findTag.DATETIME = moment(findValue.DATETIME).format('YYYY-MM-DD HH:mm:ss.SSS');
+        findTag.DATETIME = findValue.DATETIME;
         findTag.SENSOR = findValue.SENSOR;
         findTag.VALUE = findValue.VALUE;
         findTag.QUALITY = findValue.QUALITY;

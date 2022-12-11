@@ -17,7 +17,5 @@
       "signal-filter": "signal-filter.js"
     }
   },
-  "dependencies": {
-    "moment": "^2.29.4"
-  }
+  "dependencies": {}
 }
